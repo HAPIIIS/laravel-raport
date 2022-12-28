@@ -63,6 +63,12 @@
               <div class="d-flex align-items-center">
                 <p class="mb-0">Edit Profile</p>
                 <button class="btn btn-success btn-sm ms-auto">Settings</button>
+                <a href="#" class="nav-link text-white font-weight-bold px-0">
+                  <button class="btn btn-danger btn-sm mx-1">
+                    <i class="fas fa-sign-out-alt me-sm-1"></i>
+                    <span class="d-sm-inline d-none">Log Out</span>
+                  </button>
+                </a>
               </div>
             </div>
             <div class="card-body">
