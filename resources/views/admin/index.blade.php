@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  @include('template.head')
   <title>{{ $sub_page }}</title>
+  @include('template.head')
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -18,17 +18,17 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Nilai Siswa</h6>
+              <h6>Data User</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -46,15 +46,18 @@
                         <p class="text-xs font-weight-bold mb-0">Manager</p>
                         <p class="text-xs text-secondary mb-0">Organization</p>
                       </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">herey52115@kaftee.com</span>
+                      </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Online</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -71,15 +74,18 @@
                         <p class="text-xs font-weight-bold mb-0">Programator</p>
                         <p class="text-xs text-secondary mb-0">Developer</p>
                       </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">hafizh.mamoru123@gmail.com</span>
+                      </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-secondary">Offline</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -95,16 +101,19 @@
                       <td>
                         <p class="text-xs font-weight-bold mb-0">Executive</p>
                         <p class="text-xs text-secondary mb-0">Projects</p>
+                      </td>                      
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">Almot1931@teleworm.us</span>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Online</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -121,15 +130,18 @@
                         <p class="text-xs font-weight-bold mb-0">Programator</p>
                         <p class="text-xs text-secondary mb-0">Developer</p>
                       </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">ceejay.oren@falltrack.net</span>
+                      </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Online</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -146,15 +158,18 @@
                         <p class="text-xs font-weight-bold mb-0">Manager</p>
                         <p class="text-xs text-secondary mb-0">Executive</p>
                       </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">Johnny_Flanders9624@lhp4j.space</span>
+                      </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-secondary">Offline</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -171,15 +186,18 @@
                         <p class="text-xs font-weight-bold mb-0">Programtor</p>
                         <p class="text-xs text-secondary mb-0">Developer</p>
                       </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">Nate_Weasley6191@nb44i.edu</span>
+                      </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-secondary">Offline</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
-                      </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:green;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                          <i class="bi bi-trash3 text-danger" style="font-size: 1.2rem;"></i>
                         </a>
                       </td>
                     </tr>
@@ -195,5 +213,4 @@
   </div>
   @include('template.script')
 </body>
-
 </html>

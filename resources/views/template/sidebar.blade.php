@@ -7,7 +7,7 @@
       </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link {{ ($sub_page === "Data User") ? 'active' : '' }}" href="{{asset('home')}}">
@@ -18,16 +18,31 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($sub_page === "Nilai Siswa") ? 'active' : '' }}" href="{{asset('nilai')}}">
+          <a class="nav-link {{ ($sub_page === "Penilaian Harian") ? 'active' : '' }}" href="{{asset('harian')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+              <i class="ni ni-books text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Nilai Siswa</span>
+            <span class="nav-link-text ms-1">Penilaian Harian</span>
           </a>
         </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+        <li class="nav-item">
+          <a class="nav-link {{ ($sub_page === "Nilai Tahfidz") ? 'active' : '' }}" href="{{asset('tahfidz')}}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-trophy text-primary text-danger text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Nilai Tahfidz</span>
+          </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ ($sub_page === "Document Archive") ? 'active' : '' }}" href="{{asset('archive')}}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="bi bi-archive-fill text-warning text-sm opacity-10"></i>
+              
+            </div>
+            <span class="nav-link-text ms-1">Document Archive</span>
+          </a>
+        </li>
+        <hr class="horizontal dark mt-1">
         <li class="nav-item">
           <a class="nav-link {{ ($sub_page === "Profile") ? 'active' : '' }}" href="{{asset('profile')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">

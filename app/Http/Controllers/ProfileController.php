@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function show(){
-        return view('page/profile',[
+        return view('admin.profile',[
             "sub_page" => "Profile"
         ]);
     }

@@ -61,8 +61,9 @@
           <div class="card">
             <div class="card-header pb-0">
               <div class="d-flex align-items-center">
-                <p class="mb-0">Edit Profile</p>
-                <button class="btn btn-success btn-sm ms-auto">Settings</button>
+                <p class="mb-0">Profile Page</p>
+                <button class="btn btn-success btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editModal">Settings</button>
+                @include('template.modal.editprofile')
                 <a href="#" class="nav-link text-white font-weight-bold px-0">
                   <button class="btn btn-danger btn-sm mx-1">
                     <i class="fas fa-sign-out-alt me-sm-1"></i>

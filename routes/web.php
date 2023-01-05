@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\ArchiveController;
+use App\Http\Controllers\HarianController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TahfidzController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +24,12 @@ Route::get('/', [LoginController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/nilai', [NilaiController::class, 'show']);
+Route::get('/tahfidz', [TahfidzController::class, 'show']);
+
+Route::get('/harian', [HarianController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show']);
+
+Route::get('/archive', [ArchiveController::class, 'show']);
 
 
