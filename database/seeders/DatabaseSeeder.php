@@ -4,8 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\ArchiveData;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,25 +19,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        DB::table('archive_data')->insert([
             [
-                'nisn'=>'0012345',
-                'name'=>'Hafizh Trisnindito',
-                'role'=>'0',
-                'password'=>bcrypt('123456'),
+                'nama_uploader'=>'Hafizh Trisnindito',
+                'tgl_upload'=>Carbon::create('2023','01','07'),
+                'nama_file'=>'Proposal KP',
+                'jenis_file'=>'docx',
+                'dokumen_file'=>'Proposal KP.docx',
             ],
-            [
-                'nisn'=>'0012346',
-                'name'=>'Hafizh Waluyo',
-                'role'=>'1',
-                'password'=>bcrypt('123456'),
-            ],
-            [
-                'nisn'=>'0012347',
-                'name'=>'Hafizh Kebab',
-                'role'=>'2',
-                'password'=>bcrypt('123456'),
-            ],
+            
         ]);
     }
 }

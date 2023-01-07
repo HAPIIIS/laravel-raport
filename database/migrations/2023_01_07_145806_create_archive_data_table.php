@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('archive_data', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nama_uploader');
+            $table->date('tgl_upload');
+            $table->string('nama_file');
+            $table->string('jenis_file');
+            $table->string('dokumen_file');
         });
     }
 
