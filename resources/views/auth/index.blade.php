@@ -4,6 +4,13 @@
 <head>
   @include('template.head')
   <title>{{ $sub_page }}</title>
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 </head>
 
 <body class="">
@@ -18,15 +25,16 @@
               <div class="card card-plain">
                 <div class="card-header pb-0 text-start">
                   <h4 class="font-weight-bolder">Sign In</h4>
-                  <p class="mb-0">Enter your email and password to sign in</p>
+                  <p class="mb-0">Enter your NISN and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form action="" method="POST" role="form">
+                    @csrf
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      <input type="number" class="form-control form-control-lg" placeholder="NISN" aria-label="NISN">
                     </div>
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="text-center">
                       <button type="button" class="btn btn-lg btn-success btn-lg w-100 mt-4 mb-0">Sign in</button>

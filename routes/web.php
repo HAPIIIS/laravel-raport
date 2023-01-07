@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\ArchiveController;
-use App\Http\Controllers\HarianController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\HarianController;
+use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TahfidzController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index'])->name('login');
 
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -31,5 +32,3 @@ Route::get('/harian', [HarianController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 
 Route::get('/archive', [ArchiveController::class, 'show']);
-
-
