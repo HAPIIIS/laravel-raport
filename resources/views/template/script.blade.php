@@ -19,3 +19,5 @@
 <script src="{{asset('Argon/assets/js/argon-dashboard.min.js?v=2.0.4')}}"></script>
 <!-- Font-Awesome Kits -->
 <script src="https://kit.fontawesome.com/fd13a44a73.js" crossorigin="anonymous"></script>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>

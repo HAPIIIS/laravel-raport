@@ -21,51 +21,89 @@
               <h6>Document Archive</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-            <form action="" method="post">
+              <div class="row">
+                <div class="col-md-4 ms-3">
+                  @if ($message = Session::get('success'))
+                    <div class="alert alert-success" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </div>
+                  @endif
+                </div>
+              </div>
+            <form action="{{ route('input.data') }}" method="post" enctype="multipart/form-data">
+              @csrf
                 <div class="card-body">
                     <p class="text-uppercase text-sm">Input Data Here</p>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Nama Uploader</label>
-                                <input class="form-control" type="text" name="uploader" placeholder="Enter Your Name">
+                                <input id="nama_uploader" class="form-control @error('nama_uploader') is-invalid @enderror" type="text" name="nama_uploader" placeholder="Enter Your Name">
+                                @error('nama_uploader')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Tanggal Upload</label>
-                                <input class="form-control" name="tanggal" type="date">
+                                <input id="tgl_upload" class="form-control @error('tgl_upload') is-invalid @enderror" name="tgl_upload" type="date">
+                                @error('tgl_upload')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="example-text-input" class="form-control-label">Nama File</label>
-                            <input class="form-control" type="text" placeholder="Enter Your File Name">
+                            <input id="nama_file" class="form-control @error('nama_file') is-invalid @enderror" type="text" placeholder="Enter Your File Name" name="nama_file">
+                            @error('nama_file')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="example-text-input" class="form-control-label">Jenis File</label>
-                            <select class="form-control" name="jenis_file" id="jenis_file">
-                                <option a="" selected="true" disabled="disabled">Select File Type...</option>
-                                <option a="doc">DOC</option>
-                                <option a="docx">DOCX</option>
-                                <option a="xlsx">XLSX</option>
-                                <option a="pdf">PDF</option>
-                                <option a="ppt">PPT</option>
+                            <select id="jenis_file" class="form-control @error('jenis_file') is-invalid @enderror" name="jenis_file" id="jenis_file" name="jenis_file">
+                                <option value="" selected="true" disabled="disabled">Select File Type...</option>
+                                <option value="doc">DOC</option>
+                                <option value="docx">DOCX</option>
+                                <option value="xlsx">XLSX</option>
+                                <option value="pdf">PDF</option>
+                                <option value="pptx">PPTX</option>
+                                <option value="mp4">MP4</option>
+                                <option value="jpeg">JPEG</option>
+                                <option value="png">PNG</option>
                             </select>
+                            @error('jenis_file')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                           </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="example-text-input" class="form-control-label">Choose File</label>
-                              <input class="form-control" type="file">
+                              <input id="dokumen_file" class="form-control @error('dokumen_file') is-invalid @enderror" type="file" name="dokumen_file">
+                              @error('dokumen_file')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                           </div>
                       </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button class="btn btn-success btn-md ms-auto">Save</button>
+                                <button type="submit" class="btn btn-success btn-md ms-auto">Save</button>
                             </div>
                           </div>
                       </div>
@@ -82,6 +120,7 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama File</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis File</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Document</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                     </tr>
                   </thead>
@@ -117,10 +156,13 @@
                           Edit
                         </a>
                       </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Hapus
+                        </a>
+                      </td>
                     </tr>
                     @endforeach
-                    
-                    
                   </tbody>
                 </table>
               </div>
@@ -132,6 +174,13 @@
   </main>
   </div>
   @include('template.script')
+  <script>
+    window.setTimeout(function() {
+      $(".alert").fadeTo(500, 0).slideUp(500, function(){
+          $(this).remove(); 
+      });
+    }, 2000);
+</script>
 </body>
 
 </html>

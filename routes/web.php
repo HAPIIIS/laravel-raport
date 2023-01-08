@@ -32,3 +32,4 @@ Route::get('/harian', [HarianController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 
 Route::get('/archive', [ArchiveController::class, 'show']);
+Route::post('/archive', [ArchiveController::class, 'index'])->name('input.data');

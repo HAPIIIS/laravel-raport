@@ -16,6 +16,5 @@ class ArchiveData extends Model
         'nama_file',
         'jenis_file',
         'dokumen_file',
-
     ];
 }
