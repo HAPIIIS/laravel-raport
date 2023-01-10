@@ -9,6 +9,8 @@ class ArchiveData extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $table = 'archive_data';
     protected $fillable = [
         'nama_uploader',

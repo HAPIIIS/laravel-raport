@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nama_file');
             $table->string('jenis_file');
             $table->string('dokumen_file');
+            $table->timestamps();
         });
     }
 

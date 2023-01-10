@@ -4,6 +4,23 @@
 <head>
   @include('template.head')
   <title>{{ $sub_page }}</title>
+  <style>
+    .pagination > li > a,
+    .pagination > li > span {
+        color: #ffffff; 
+    }
+
+    .pagination > .active > a,
+    .pagination > .active > a:focus,
+    .pagination > .active > a:hover,
+    .pagination > .active > span,
+    .pagination > .active > span:focus,
+    .pagination > .active > span:hover {
+        color: #ffffff;
+        background-color: #2dce89;
+        border-color: #2dce89;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -30,7 +47,7 @@
                   @endif
                 </div>
               </div>
-            <form action="{{ route('input.data') }}" method="post" enctype="multipart/form-data">
+            <form name="input_data" action="{{ route('input.data') }}" method="post" enctype="multipart/form-data">
               @csrf
                 <div class="card-body">
                     <p class="text-uppercase text-sm">Input Data Here</p>
@@ -130,7 +147,7 @@
                       <td>
                         <div class="d-flex px-1 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-s text-center">{{ $a->id }}</h6>
+                            <h6 class="mb-0 text-s text-center">{{ +1 }}</h6>
                           </div>
                         </div>
                       </td>
@@ -147,17 +164,17 @@
                         <p class="text-s font-weight-bold mb-0 text-center">{{ $a->jenis_file }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <a href="dokumen/{{ $a->dokumen_file }}">
+                        <a href="{{ Storage::url('public/dokumen/'.$a->dokumen_file) }}">
                           <button class="btn btn-success">Download</button>
                         </a>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="{{ url('/archive/' . $a->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editModal{{ $a->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="{{ url('/archive/' . $a->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $a->id }}" class="text-secondary font-weight-bold text-xs">
                           Hapus
                         </a>
                       </td>
@@ -165,6 +182,10 @@
                     @endforeach
                   </tbody>
                 </table>
+                @include('template.modal.editarchive')
+                <div class="color-success">
+                  {{ $archive->links() }}
+                </div>
               </div>
             </div>
           </div>
@@ -179,7 +200,7 @@
       $(".alert").fadeTo(500, 0).slideUp(500, function(){
           $(this).remove(); 
       });
-    }, 2000);
+    }, 4000);
 </script>
 </body>
 
