@@ -3,6 +3,7 @@
 <div class="modal fade" id="editModal{{ $a->id }}" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <form name="edit_data" action="{{ url('/archive/update/'.$a->id) }}" method="post" enctype="multipart/form-data">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Document</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -10,7 +11,6 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-12">
-                    <form name="input_data" action="{{ url('/archive/update/'.$a->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                           <div class="card-body">
                               <p class="text-uppercase text-sm">Input Data Here</p>
@@ -49,16 +49,13 @@
                                     </div>
                                   </div>
                                 </div>
-                                  
                                 </div>
                               </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save changes</button>
+                              </div>
                       </form>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href="{{ url('/archive/update/'. $a->id) }}">
-                            <button type="submit" class="btn btn-success">Save changes</button>
-                        </a>
-                      </div>
                 </div>
             </div>
         </div>

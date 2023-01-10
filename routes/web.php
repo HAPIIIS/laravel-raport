@@ -32,11 +32,10 @@ Route::get('/harian', [HarianController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show']);
 
-// Route::resource('/archive', \App\Http\Controllers\ArchiveController::class);
 Route::get('/archive', [ArchiveController::class, 'show'])->name('index.data'); //nampilin data
 Route::post('/archive', [ArchiveController::class, 'index'])->name('input.data'); //input data archive
 
 Route::get('/archive/{id}/edit',[ArchiveController::class,'edit']);
-Route::post('/archive/update/{id}',[ArchiveController::class],'update');
+Route::post('/archive/update/{id}',[ArchiveController::class,'update']);
 
 Route::get('/archive/{id}/hapus', [ArchiveController::class,'hapus']);

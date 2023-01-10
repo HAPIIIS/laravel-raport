@@ -56,32 +56,21 @@ class ArchiveController extends Controller
     }
 
     public function edit(Request $request, $id){
-        $data = ArchiveData::where($id)->first();
+        $data = ArchiveData::find($id)->first();
         return view('admin.archive',compact('data'));
     }
 
-    public function update(ArchiveData $request, $id){
+    public function update(Request $request, $id){
         $validatedData = $request->validate([
             'nama_uploader' => 'required',
             'nama_file' => 'required',
         ]);
 
-        $data = ArchiveData::where($id)->first();
+        $data = ArchiveData::find($id)->first();
         $data->nama_uploader = $request->nama_uploader;
         $data->tgl_upload = $request->tgl_upload;
         $data->nama_file = $request->nama_file;
         $data->save();
-
-        
-        // $dokumen_file->storeAs('public/dokumen', $nama_dokumen);
-
-        // DB::table('archive_data')->insert([
-        //     'nama_uploader' => $data->nama_uploader,
-        //     'tgl_upload' => $data->tgl_upload,
-        //     'nama_file' => $data->nama_file,
-        //     'jenis_file' => $data->jenis_file,
-        //     'dokumen_file' => $data->nama_dokumen,
-        // ]);
 
         return redirect('/archive');
 
