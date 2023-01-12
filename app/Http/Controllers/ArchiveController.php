@@ -16,11 +16,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class ArchiveController extends Controller
 {
     public function show(){
-        // $archive = ArchiveData::all();
-        $archive = ArchiveData::paginate(5);
         return view('admin.archive',[
             "sub_page" => "Document Archive",
-            "archive" => $archive
+            "archive" => ArchiveData::latest()->filter(request(['search']))->paginate(5)
         ]);
     }
 
@@ -43,20 +41,12 @@ class ArchiveController extends Controller
         $data->jenis_file = $request->jenis_file;
         $data->dokumen_file = $nama_dokumen;
         $data->save();
-        
-        // DB::table('archive_data')->insert([
-        //     'nama_uploader' => $nama_uploader,
-        //     'tgl_upload' => $tgl_upload,
-        //     'nama_file' => $nama_file,
-        //     'jenis_file' => $jenis_file,
-        //     'dokumen_file' => $nama_dokumen,
-        // ]);
 
         return redirect('/archive');
     }
 
     public function edit(Request $request, $id){
-        $data = ArchiveData::find($id)->first();
+        $data = ArchiveData::find($id);
         return view('admin.archive',compact('data'));
     }
 
@@ -66,7 +56,7 @@ class ArchiveController extends Controller
             'nama_file' => 'required',
         ]);
 
-        $data = ArchiveData::find($id)->first();
+        $data = ArchiveData::find($id);
         $data->nama_uploader = $request->nama_uploader;
         $data->tgl_upload = $request->tgl_upload;
         $data->nama_file = $request->nama_file;

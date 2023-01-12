@@ -13,11 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('harians', function (Blueprint $table) {
+        Schema::create('matematika', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('nisn');
+            $table->string('nama_siswa');
             $table->integer('ph1');
             $table->integer('ph2');
+            $table->integer('ph3');
+            $table->integer('ph4');
+            $table->integer('ph5');
+            $table->integer('ph6');
+            $table->integer('ph7');
+            $table->integer('ph8');
+            $table->integer('ph9');
+            $table->timestamp('posted_at')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('harians');
+        Schema::dropIfExists('matematika');
     }
 };

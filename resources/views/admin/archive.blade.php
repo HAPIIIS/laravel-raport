@@ -5,6 +5,9 @@
   @include('template.head')
   <title>{{ $sub_page }}</title>
   <style>
+    .alert{
+      color: #ffffff;
+    }
     .pagination > li > a,
     .pagination > li > span {
         color: #ffffff; 
@@ -127,6 +130,7 @@
                     </div>
             </form>
             <hr class="horizontal dark mt-0">
+            @if($archive->count())
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
@@ -147,7 +151,7 @@
                       <td>
                         <div class="d-flex px-1 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-s text-center">{{ +1 }}</h6>
+                            <h6 class="mb-0 text-s text-center ms-4">{{ $archive->firstItem()+ $loop->index }}</h6>
                           </div>
                         </div>
                       </td>
@@ -181,12 +185,16 @@
                     </tr>
                     @endforeach
                   </tbody>
-                </table>
-                @include('template.modal.editarchive')
-                <div class="color-success">
-                  {{ $archive->links() }}
                 </div>
-              </div>
+                @include('template.modal.editarchive')
+                  <div class="color-success mt-2 ms-2 me-2">
+                    {{ $archive->links() }}
+                  </div>
+                </table>
+              @else
+                <p class="text-center fs-4">Data tidak ditemukan!</p>
+              @endif
+              
             </div>
           </div>
         </div>

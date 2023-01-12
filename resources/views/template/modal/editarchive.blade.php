@@ -71,14 +71,16 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Apakah anda yakin akan menghapus data? 
+            <div class="mb-2">
+              Apakah anda yakin akan menghapus data?
+            </div>
             <br>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <a href="{{url('/archive/'. $a->id .'/hapus')}}">
-                <button class="btn btn-danger">Hapus</button>
-            </a>
+            <div class="modal-footer mb-0">
+              <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+              <a href="{{url('/archive/'. $a->id .'/hapus')}}">
+                  <button class="btn btn-danger">Hapus</button>
+              </a>
+            </div>
           </div>
       </div>
     </div>

@@ -19,4 +19,11 @@ class ArchiveData extends Model
         'jenis_file',
         'dokumen_file',
     ];
+
+    public function scopeFilter($query, array $filters){
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('nama_uploader', 'like', '%'. $search . '%')
+            ->orWhere('nama_file', 'like', '%' . $search . '%');
+        });
+    }
 }
