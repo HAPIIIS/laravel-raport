@@ -31,7 +31,7 @@
   @include('template.sidebar')
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    @include('template.navbar')
+    @include('template.navbar.navbar')
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">

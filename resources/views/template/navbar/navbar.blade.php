@@ -20,12 +20,8 @@
         <div class="ms-md-auto pe-md-3 d-flex align-items-center">
           <form action="/archive"> 
             <div class="input-group">
-              <div class="form-outline">
-                <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}"/>
-              </div>
-              <button type="submit" class="btn btn-success">
-                <i class="fas fa-search"></i>
-              </button>
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Type here..." name="search" value="{{ request('search') }}">
             </div>
           </form>
         </div>

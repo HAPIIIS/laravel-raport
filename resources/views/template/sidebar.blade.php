@@ -18,11 +18,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($sub_page === "Penilaian Harian") ? 'active' : '' }}" href="{{asset('harian')}}">
+          <a class="nav-link {{ ($sub_page === "Nilai Matematika") ? 'active' : '' }}" href="{{asset('nilai/matematika')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-books text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Penilaian Harian</span>
+            <span class="nav-link-text ms-1">Nilai Matematika</span>
           </a>
         </li>
         <li class="nav-item">
@@ -37,7 +37,6 @@
           <a class="nav-link {{ ($sub_page === "Document Archive") ? 'active' : '' }}" href="{{asset('archive')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="bi bi-archive-fill text-warning text-sm opacity-10"></i>
-              
             </div>
             <span class="nav-link-text ms-1">Document Archive</span>
           </a>

@@ -15,17 +15,18 @@ return new class extends Migration
     {
         Schema::create('matematika', function (Blueprint $table) {
             $table->id();
-            $table->integer('nisn');
+            $table->char('nisn', 10);
             $table->string('nama_siswa');
-            $table->integer('ph1');
-            $table->integer('ph2');
-            $table->integer('ph3');
-            $table->integer('ph4');
-            $table->integer('ph5');
-            $table->integer('ph6');
-            $table->integer('ph7');
-            $table->integer('ph8');
-            $table->integer('ph9');
+            $table->string('kelas');
+            $table->integer('ph1')->nullable();
+            $table->integer('ph2')->nullable();
+            $table->integer('ph3')->nullable();
+            $table->integer('ph4')->nullable();
+            $table->integer('ph5')->nullable();
+            $table->integer('ph6')->nullable();
+            $table->integer('ph7')->nullable();
+            $table->integer('ph8')->nullable();
+            $table->integer('ph9')->nullable();
             $table->timestamp('posted_at')->nullable();
             $table->timestamps();
         });
