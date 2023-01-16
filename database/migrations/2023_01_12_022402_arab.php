@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('arab', function (Blueprint $table) {
             $table->id();
-            $table->integer('nisn');
+            $table->char('nisn', 15)->unique();
             $table->string('nama_siswa');
             $table->string('kelas');
             $table->integer('ph1')->nullable();

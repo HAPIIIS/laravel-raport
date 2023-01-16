@@ -4,19 +4,6 @@
 <head>
   @include('template.head')
   <title>{{ $sub_page }}</title>
-  <style>
-    ::-webkit-scrollbar{
-        height: 7px;
-        width: 24px;
-        scroll-padding: 2rem;
-    }
-    ::-webkit-scrollbar-thumb:horizontal{
-        border: 4px solid #2ecd89;
-        background-clip: padding-box;
-        background-color: white;
-        border-radius: 10px;
-    }
-  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -24,10 +11,13 @@
   @include('template.sidebar')
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    @include('template.navbar.navbarmtk')
+    @include('template.navbar.navbarmapel')
     <!-- End Navbar -->
 
     {{-- Modal Tambah --}}
+    @include('template.modal.arab.tambahdata')
+    {{-- End Modal Tambah --}}
+
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
@@ -35,20 +25,25 @@
             <div class="card-header pb-0">
               <h6>Nilai Harian</h6>
               <div class="div-button d-flex justify-content-end mt-2 me-3">
-                <a href="{{ url('/nilai/matematika/tambah') }}" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                <a href="{{ url('/nilai/bhs_arab/tambah') }}" data-bs-toggle="modal" data-bs-target="#tambahModal">
                   <button type="button" class="btn btn-success">
                     <i class="bi bi-plus-lg color-white"></i>
                     Tambah Data
                   </button>
                 </a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#importExcel">
+                  <button type="button" class="btn btn-outline-success ms-2">
+                    <i class="bi bi-database-add"></i>
+                    Import Excel
+                  </button>
+                </a>
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-              @if($nilai_mtk->count())
+              @if($nilai_arab->count())
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
-                  @foreach ($nilai_mtk as $mtk)
                     <tr>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No.</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NISN</th>
@@ -68,57 +63,58 @@
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach ($nilai_arab as $arab)
                     <tr>
                       <td>
                         <div class="d-flex px-1 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-s text-center ms-3">{{ $nilai_mtk->firstItem()+ $loop->index }}</h6>
+                            <h6 class="mb-0 text-s text-center ms-3">{{ $nilai_arab->firstItem()+ $loop->index }}</h6>
                           </div>
                         </div>
                       </td>
                       <td>
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->nisn }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->nisn }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->nama_siswa }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->nama_siswa }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->kelas }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->kelas }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph1 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph1 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph2 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph2 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph3 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph3 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph4 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph4 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph5 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph5 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph6 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph6 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph7 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph7 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph8 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph8 }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph9 }}</p>
+                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph9 }}</p>
                       </td>
                       <td class="align-middle">
-                        <a href="{{ url('/nilai/matematika/' . $mtk->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $mtk->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="{{ url('/nilai/bhs_arab/' . $arab->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
                       <td class="align-middle">
-                        <a href="{{ url('/nilai/matematika/' . $mtk->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteNilaiModal{{ $mtk->id }}" class="text-secondary font-weight-bold text-xs">
+                        <a href="{{ url('/nilai/bhs_arab/' . $arab->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs">
                           Hapus
                         </a>
                       </td>
@@ -126,9 +122,9 @@
                   @endforeach
                   </tbody>
                 </div>
-                @include('template.modal.matematika.editdata')
+                @include('template.modal.arab.editdata')
                   <div class="color-success mt-2 ms-2 me-2">
-                    {{ $nilai_mtk->links() }}
+                    {{ $nilai_arab->links() }}
                   </div>
                 </table>
               @else

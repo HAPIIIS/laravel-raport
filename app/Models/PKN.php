@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matematika extends Model
+class PKN extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'matematika';
+    protected $table = 'ppkn';
     protected $guarded = ['id'];
 
     public function scopeFilter($query, array $filters){

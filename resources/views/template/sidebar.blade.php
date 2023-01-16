@@ -1,5 +1,5 @@
-<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
-    <div class="sidenav-header">
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4" id="sidenav-main">
+    <div class="sidenav-header d-flex justify-content-center">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="#">
         <img src="{{asset('img/logo.png')}}" class="navbar-brand-img h-100" alt="main_logo">
@@ -8,7 +8,7 @@
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav list-group">
         <li class="nav-item">
           <a class="nav-link {{ ($sub_page === "Data User") ? 'active' : '' }}" href="{{asset('home')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -18,13 +18,93 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($sub_page === "Nilai Matematika") ? 'active' : '' }}" href="{{asset('nilai/matematika')}}">
+          <a class="nav-link {{ ($sub_page === "Mata Pelajaran") ? 'active' : '' }}" aria-current="true" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1" href="#">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-books text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Nilai Matematika</span>
+            <span class="nav-link-text ms-1">Mata Pelajaran</span>
           </a>
+          <ul id="collapseExample1" class="collapse show list-group list-group-flush">
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai Matematika") ? 'active' : '' }}" href="{{asset('nilai/matematika')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Matematika</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai PKN") ? 'active' : '' }}" href="{{asset('nilai/pkn')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai PKN</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Arab") ? 'active' : '' }}" href="{{asset('nilai/bhs_arab')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Bahasa Arab</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Inggris") ? 'active' : '' }}" href="{{asset('nilai/bhs_inggris')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Bahasa Inggris</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai IPA") ? 'active' : '' }}" href="{{asset('nilai/ipa')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai IPA</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai IPS") ? 'active' : '' }}" href="{{asset('nilai/ips')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai IPS</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai PAI BP") ? 'active' : '' }}" href="{{asset('nilai/paibp')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai PAI BP</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai PJOK") ? 'active' : '' }}" href="{{asset('nilai/pjok')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai PJOK</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai Seni Budaya") ? 'active' : '' }}" href="{{asset('nilai/seni_budaya')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Seni Budaya</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Sunda") ? 'active' : '' }}" href="{{asset('nilai/bhs_sunda')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Bahasa Sunda</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page === "Nilai TIK") ? 'active' : '' }}" href="{{asset('nilai/tik')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai TIK</span>
+              </a>
+            </li>
+          </ul>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link {{ ($sub_page === "Nilai Tahfidz") ? 'active' : '' }}" href="{{asset('tahfidz')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\MatematikaImport;
-use App\Models\Matematika;
-use Illuminate\Http\Request;
+use App\Imports\ArabImport;
+use App\Models\Arab;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
 
-class MatematikaController extends Controller
+class ArabController extends Controller
 {
     public function show(){
-        return view('admin.mapel.mtk',[
-            "sub_page" => "Nilai Matematika",
-            "nilai_mtk" => Matematika::latest()->filter(request(['search']))->paginate(10)
+        return view('admin.mapel.arab',[
+            "sub_page" => "Nilai Bahasa Arab",
+            "nilai_arab" => Arab::latest()->filter(request(['search']))->paginate(10)
         ]);
     }
     public function store(Request $request){
@@ -21,7 +21,7 @@ class MatematikaController extends Controller
             'nama_siswa' => 'required',
         ]);
 
-        $data = new Matematika();
+        $data = new Arab();
         $data->nisn = $request->nisn;
         $data->nama_siswa = $request->nama_siswa;
         $data->kelas = $request->kelas;
@@ -36,12 +36,12 @@ class MatematikaController extends Controller
         $data->ph9 = $request->ph9;
         $data->save();
 
-        return redirect('/nilai/matematika');
+        return redirect('/nilai/bhs_arab');
     }
 
     public function edit(Request $request, $id){
-        $data = Matematika::find($id);
-        return view('admin.mapel.mtk',compact('data'));
+        $data = Arab::find($id);
+        return view('admin.mapel.arab',compact('data'));
     }
 
     public function update(Request $request, $id){
@@ -50,7 +50,7 @@ class MatematikaController extends Controller
             'nama_siswa' => 'required',
         ]);
 
-        $data = Matematika::find($id);
+        $data = Arab::find($id);
         $data->nisn = $request->nisn;
         $data->nama_siswa = $request->nama_siswa;
         $data->kelas = $request->kelas;
@@ -65,17 +65,17 @@ class MatematikaController extends Controller
         $data->ph9 = $request->ph9;
         $data->save();
 
-        return redirect('/nilai/matematika');
+        return redirect('/nilai/bhs_arab');
 
     }
 
     public function hapus(Request $request, $id)
     {
-        $data = Matematika::where('id', $id)->first();
+        $data = Arab::where('id', $id)->first();
         if ($data != null) {
             $data->delete();
         }
-        return redirect('/nilai/matematika');
+        return redirect('/nilai/bhs_arab');
     }
 
     public function import(Request $request) 
@@ -92,12 +92,12 @@ class MatematikaController extends Controller
 		$nama_file = $file->getClientOriginalName();
  
 		// upload ke folder file_siswa di dalam folder public
-		$file->storeAs('/public/matematika',$nama_file);
+		$file->storeAs('/public/bhs_arab',$nama_file);
  
 		// import data
-		Excel::import(new MatematikaImport, storage_path('app\public\matematika\\'. $nama_file));
+		Excel::import(new ArabImport, storage_path('app\public\arab\\'. $nama_file));
 
 		// alihkan halaman kembali
-		return redirect('/nilai/matematika');
+		return redirect('/nilai/bhs_arab');
 	}
 }
