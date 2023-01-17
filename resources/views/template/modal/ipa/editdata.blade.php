@@ -1,9 +1,9 @@
-@foreach ($nilai_mtk as $mtk)
+@foreach ($nilai_ipa as $ipa)
 {{-- Modal Edit --}}
-<div class="modal fade" id="editNilaiModal{{ $mtk->id }}" tabindex="-1" aria-labelledby="editMTKModalLabel" aria-hidden="true">
+<div class="modal fade" id="editNilaiModal{{ $ipa->id }}" tabindex="-1" aria-labelledby="editipaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form name="edit_data" action="{{ url('/nilai/matematika/update/'.$mtk->id) }}" method="post" enctype="multipart/form-data">
+        <form name="edit_data" action="{{ url('/nilai/ipa/update/'.$ipa->id) }}" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit Document</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -161,7 +161,7 @@
   </div>  
 
 {{-- DeleteModal  --}}
-<div class="modal fade" id="deleteNilaiModal{{ $mtk->id }}" tabindex="-1" aria-labelledby="deleteNilaiLabel" aria-hidden="true">
+<div class="modal fade" id="deleteNilaiModal{{ $ipa->id }}" tabindex="-1" aria-labelledby="deleteNilaiLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
@@ -175,7 +175,7 @@
             <br>
             <div class="modal-footer mb-0">
               <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-              <a href="{{url('/nilai/matematika/'. $mtk->id .'/hapus')}}">
+              <a href="{{url('/nilai/ipa/'. $ipa->id .'/hapus')}}">
                   <button class="btn btn-danger">Hapus</button>
               </a>
             </div>

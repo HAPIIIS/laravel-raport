@@ -18,7 +18,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($sub_page === "Mata Pelajaran") ? 'active' : '' }}" aria-current="true" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1" href="#">
+          <a class="nav-link" aria-current="true" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1" href="#">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-books text-success text-sm opacity-10"></i>
             </div>
@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Arab") ? 'active' : '' }}" href="{{asset('nilai/bhs_arab')}}">
+              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Arab") ? 'active' : '' }}" href="{{asset('nilai/arab')}}">
                 <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 </div>
                 <span class="nav-link-text ms-1">Nilai Bahasa Arab</span>
@@ -68,7 +68,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ ($sub_page === "Nilai PAI BP") ? 'active' : '' }}" href="{{asset('nilai/paibp')}}">
+              <a class="nav-link {{ ($sub_page === "Nilai PAI BP") ? 'active' : '' }}" href="{{asset('nilai/pai')}}">
                 <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 </div>
                 <span class="nav-link-text ms-1">Nilai PAI BP</span>
@@ -82,14 +82,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ ($sub_page === "Nilai Seni Budaya") ? 'active' : '' }}" href="{{asset('nilai/seni_budaya')}}">
+              <a class="nav-link {{ ($sub_page === "Nilai Seni Budaya") ? 'active' : '' }}" href="{{asset('nilai/sbdp')}}">
                 <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 </div>
                 <span class="nav-link-text ms-1">Nilai Seni Budaya</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Sunda") ? 'active' : '' }}" href="{{asset('nilai/bhs_sunda')}}">
+              <a class="nav-link {{ ($sub_page === "Nilai Bahasa Sunda") ? 'active' : '' }}" href="{{asset('nilai/sunda')}}">
                 <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 </div>
                 <span class="nav-link-text ms-1">Nilai Bahasa Sunda</span>

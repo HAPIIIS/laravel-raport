@@ -3,7 +3,7 @@
 <div class="modal fade" id="editNilaiModal{{ $arab->id }}" tabindex="-1" aria-labelledby="editarabModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form name="edit_data" action="{{ url('/nilai/bhs_arab/update/'.$arab->id) }}" method="post" enctype="multipart/form-data">
+        <form name="edit_data" action="{{ url('/nilai/arab/update/'.$arab->id) }}" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit Document</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -175,7 +175,7 @@
             <br>
             <div class="modal-footer mb-0">
               <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-              <a href="{{url('/nilai/bhs_arab/'. $arab->id .'/hapus')}}">
+              <a href="{{url('/nilai/arab/'. $arab->id .'/hapus')}}">
                   <button class="btn btn-danger">Hapus</button>
               </a>
             </div>

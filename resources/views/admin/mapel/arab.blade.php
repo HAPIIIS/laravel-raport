@@ -11,7 +11,7 @@
   @include('template.sidebar')
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    @include('template.navbar.navbarmapel')
+    @include('template.navbar.navbararab')
     <!-- End Navbar -->
 
     {{-- Modal Tambah --}}
@@ -25,7 +25,7 @@
             <div class="card-header pb-0">
               <h6>Nilai Harian</h6>
               <div class="div-button d-flex justify-content-end mt-2 me-3">
-                <a href="{{ url('/nilai/bhs_arab/tambah') }}" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                <a href="{{ url('/nilai/arab/tambah') }}" data-bs-toggle="modal" data-bs-target="#tambahModal">
                   <button type="button" class="btn btn-success">
                     <i class="bi bi-plus-lg color-white"></i>
                     Tambah Data
@@ -37,6 +37,9 @@
                     Import Excel
                   </button>
                 </a>
+              </div>
+              <div class="color-success mt-1 ms-1 me-1">
+                {{ $nilai_arab->links() }}
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -73,48 +76,84 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->nisn }}</p>
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $arab->nisn }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->nama_siswa }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->kelas }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph1 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph2 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph3 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph4 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph5 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph6 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph7 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph8 }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph9 }}</p>
+                      <td class="align-middle text-sm">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $arab->nama_siswa }}</p>
                       </td>
                       <td class="align-middle">
-                        <a href="{{ url('/nilai/bhs_arab/' . $arab->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $arab->kelas }}</p>
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph1 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph1 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph1 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph2 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph2 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph2 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph3 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph3 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph3 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph4 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph4 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph4 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph5 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph5 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph5 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph6 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph6 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph6 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph7 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph7 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph7 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph8 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph8 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph8 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($arab->ph9 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $arab->ph9 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $arab->ph9 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle">
+                        <a href="{{ url('/nilai/arab/' . $arab->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
                       <td class="align-middle">
-                        <a href="{{ url('/nilai/bhs_arab/' . $arab->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs">
+                        <a href="{{ url('/nilai/arab/' . $arab->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteNilaiModal{{ $arab->id }}" class="text-secondary font-weight-bold text-xs">
                           Hapus
                         </a>
                       </td>
@@ -123,9 +162,6 @@
                   </tbody>
                 </div>
                 @include('template.modal.arab.editdata')
-                  <div class="color-success mt-2 ms-2 me-2">
-                    {{ $nilai_arab->links() }}
-                  </div>
                 </table>
               @else
                 <p class="text-center fs-4">Data tidak ditemukan!</p>

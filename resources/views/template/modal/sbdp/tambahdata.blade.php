@@ -2,7 +2,7 @@
 <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form name="insert_data" action="{{ url('/nilai/matematika/tambah') }}" method="post" enctype="multipart/form-data">
+        <form name="insert_data" action="{{ url('/nilai/sbdp/tambah') }}" method="post" enctype="multipart/form-data">
         <div class="modal-header">
           <h5 class="modal-title" id="tambahModalLabel">Tambah Data</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -162,7 +162,7 @@
   <div class="modal fade" id="importExcel" tabindex="-1" aria-labelledby="importExcelLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form name="import_excel" action="{{ url('/nilai/matematika/import_excel') }}" method="post" enctype="multipart/form-data">
+        <form name="import_excel" action="{{ url('/nilai/sbdp/import_excel') }}" method="post" enctype="multipart/form-data">
         <div class="modal-header">
           <h5 class="modal-title" id="importExcelLabel">Import Excel</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

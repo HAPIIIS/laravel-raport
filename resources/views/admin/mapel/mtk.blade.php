@@ -11,7 +11,7 @@
   @include('template.sidebar')
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    @include('template.navbar.navbarmapel')
+    @include('template.navbar.navbarmtk')
     <!-- End Navbar -->
 
     {{-- Modal Tambah --}}
@@ -37,6 +37,9 @@
                     Import Excel
                   </button>
                 </a>
+              </div>
+              <div class="color-success mt-1 ms-1 me-1">
+                {{ $nilai_mtk->links() }}
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -73,40 +76,76 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->nisn }}</p>
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $mtk->nisn }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->nama_siswa }}</p>
+                      <td class="align-middle text-sm">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $mtk->nama_siswa }}</p>
                       </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->kelas }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph1 }}</p>
+                      <td class="align-middle">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $mtk->kelas }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph2 }}</p>
+                        @if ($mtk->ph1 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph1 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph1 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph3 }}</p>
+                        @if ($mtk->ph2 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph2 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph2 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph4 }}</p>
+                        @if ($mtk->ph3 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph3 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph3 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph5 }}</p>
+                        @if ($mtk->ph4 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph4 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph4 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph6 }}</p>
+                        @if ($mtk->ph5 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph5 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph5 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph7 }}</p>
+                        @if ($mtk->ph6 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph6 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph6 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph8 }}</p>
+                        @if ($mtk->ph7 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph7 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph7 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph9 }}</p>
+                        @if ($mtk->ph8 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph8 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph8 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($mtk->ph9 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $mtk->ph9 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $mtk->ph9 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle">
                         <a href="{{ url('/nilai/matematika/' . $mtk->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $mtk->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -123,9 +162,6 @@
                   </tbody>
                 </div>
                 @include('template.modal.matematika.editdata')
-                  <div class="color-success mt-2 ms-2 me-2">
-                    {{ $nilai_mtk->links() }}
-                  </div>
                 </table>
               @else
                 <p class="text-center fs-4">Data tidak ditemukan!</p>

@@ -11,7 +11,7 @@
   @include('template.sidebar')
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    @include('template.navbar.navbarmapel')
+    @include('template.navbar.navbarpkn')
     <!-- End Navbar -->
 
     {{-- Modal Tambah --}}
@@ -37,6 +37,9 @@
                     Import Excel
                   </button>
                 </a>
+              </div>
+              <div class="color-success mt-1 ms-1 me-1">
+                {{ $nilai_pkn->links() }}
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -73,40 +76,76 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->nisn }}</p>
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $pkn->nisn }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->nama_siswa }}</p>
+                      <td class="align-middle text-sm">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $pkn->nama_siswa }}</p>
                       </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->kelas }}</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph1 }}</p>
+                      <td class="align-middle">
+                        <p class="text-s font-weight-bold mb-0 me-2">{{ $pkn->kelas }}</p>
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph2 }}</p>
+                        @if ($pkn->ph1 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph1 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph1 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph3 }}</p>
+                        @if ($pkn->ph2 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph2 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph2 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph4 }}</p>
+                        @if ($pkn->ph3 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph3 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph3 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph5 }}</p>
+                        @if ($pkn->ph4 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph4 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph4 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph6 }}</p>
+                        @if ($pkn->ph5 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph5 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph5 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph7 }}</p>
+                        @if ($pkn->ph6 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph6 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph6 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph8 }}</p>
+                        @if ($pkn->ph7 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph7 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph7 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle text-center">
-                        <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph9 }}</p>
+                        @if ($pkn->ph8 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph8 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph8 }}</p>
+                        @endif
+                      </td>
+                      <td class="align-middle text-center">
+                        @if ($pkn->ph9 < 75)
+                          <p class="text-s font-weight-bold mb-0 text-center me-2 text-danger">{{ $pkn->ph9 }}</p>
+                        @else
+                          <p class="text-s font-weight-bold mb-0 text-center me-2">{{ $pkn->ph9 }}</p>
+                        @endif
                       </td>
                       <td class="align-middle">
                         <a href="{{ url('/nilai/pkn/' . $pkn->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editNilaiModal{{ $pkn->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -123,9 +162,6 @@
                   </tbody>
                 </div>
                 @include('template.modal.pkn.editdata')
-                  <div class="color-success mt-2 ms-2 me-2">
-                    {{ $nilai_pkn->links() }}
-                  </div>
                 </table>
               @else
                 <p class="text-center fs-4">Data tidak ditemukan!</p>

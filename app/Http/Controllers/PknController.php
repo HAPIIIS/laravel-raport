@@ -12,7 +12,7 @@ class PknController extends Controller
     public function show(){
         return view('admin.mapel.pkn',[
             "sub_page" => "Nilai Pendidikan Kewarganegaraan",
-            "nilai_pkn" => PKN::latest()->filter(request(['search']))->paginate(10)
+            "nilai_pkn" => PKN::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
     public function store(Request $request){

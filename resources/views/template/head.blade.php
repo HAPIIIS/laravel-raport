@@ -58,4 +58,10 @@
     .sidenav-footer{
       display: none;
     }
+    .form-outline i{
+              position: absolute;
+              left: 15px;
+              top: 40px;
+              color: gray;
+          }
   </style>

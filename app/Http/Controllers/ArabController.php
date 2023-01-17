@@ -12,7 +12,7 @@ class ArabController extends Controller
     public function show(){
         return view('admin.mapel.arab',[
             "sub_page" => "Nilai Bahasa Arab",
-            "nilai_arab" => Arab::latest()->filter(request(['search']))->paginate(10)
+            "nilai_arab" => Arab::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
     public function store(Request $request){
@@ -36,7 +36,7 @@ class ArabController extends Controller
         $data->ph9 = $request->ph9;
         $data->save();
 
-        return redirect('/nilai/bhs_arab');
+        return redirect('/nilai/arab');
     }
 
     public function edit(Request $request, $id){
@@ -65,7 +65,7 @@ class ArabController extends Controller
         $data->ph9 = $request->ph9;
         $data->save();
 
-        return redirect('/nilai/bhs_arab');
+        return redirect('/nilai/arab');
 
     }
 
@@ -75,7 +75,7 @@ class ArabController extends Controller
         if ($data != null) {
             $data->delete();
         }
-        return redirect('/nilai/bhs_arab');
+        return redirect('/nilai/arab');
     }
 
     public function import(Request $request) 
@@ -92,12 +92,12 @@ class ArabController extends Controller
 		$nama_file = $file->getClientOriginalName();
  
 		// upload ke folder file_siswa di dalam folder public
-		$file->storeAs('/public/bhs_arab',$nama_file);
+		$file->storeAs('/public/arab',$nama_file);
  
 		// import data
 		Excel::import(new ArabImport, storage_path('app\public\arab\\'. $nama_file));
 
 		// alihkan halaman kembali
-		return redirect('/nilai/bhs_arab');
+		return redirect('/nilai/arab');
 	}
 }
