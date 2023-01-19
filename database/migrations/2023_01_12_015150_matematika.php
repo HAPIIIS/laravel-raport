@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->char('nisn', 15)->unique();
             $table->string('nama_siswa');
-            $table->string('kelas');
+            $table->string('kelas')->nullable();
             $table->integer('ph1')->nullable();
             $table->integer('ph2')->nullable();
             $table->integer('ph3')->nullable();

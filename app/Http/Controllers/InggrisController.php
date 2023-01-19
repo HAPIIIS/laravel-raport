@@ -51,18 +51,18 @@ class InggrisController extends Controller
         ]);
 
         $data = Inggris::find($id);
-        $data->nisn = $request->nisn;
-        $data->nama_siswa = $request->nama_siswa;
-        $data->kelas = $request->kelas;
-        $data->ph1 = $request->ph1;
-        $data->ph2 = $request->ph2;
-        $data->ph3 = $request->ph3;
-        $data->ph4 = $request->ph4;
-        $data->ph5 = $request->ph5;
-        $data->ph6 = $request->ph6;
-        $data->ph7 = $request->ph7;
-        $data->ph8 = $request->ph8;
-        $data->ph9 = $request->ph9;
+        $data->nisn = $request->input('nisn', $data->nisn);
+        $data->nama_siswa = $request->input('nama_siswa', $data->nama_siswa);
+        $data->kelas = $request->input('kelas', $data->kelas);
+        $data->ph1 = $request->input('ph1', $data->ph1);
+        $data->ph2 = $request->input('ph2', $data->ph2);
+        $data->ph3 = $request->input('ph3', $data->ph3);
+        $data->ph4 = $request->input('ph4', $data->ph4);
+        $data->ph5 = $request->input('ph5', $data->ph5);
+        $data->ph6 = $request->input('ph6', $data->ph6);
+        $data->ph7 = $request->input('ph7', $data->ph7);
+        $data->ph8 = $request->input('ph8', $data->ph8);
+        $data->ph9 = $request->input('ph9', $data->ph9);
         $data->save();
 
         return redirect('/nilai/bhs_inggris');
