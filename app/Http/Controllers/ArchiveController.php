@@ -25,7 +25,7 @@ class ArchiveController extends Controller
         ]);
         
         $dokumen_file = $request->file('dokumen_file');
-        $nama_dokumen = $request->file('dokumen_file')->getClientOriginalName(); 
+        $nama_dokumen = rand(0,999999) . $request->file('dokumen_file')->getClientOriginalName(); 
         // $dokumen_file->move(public_path('dokumen/'), $nama_dokumen);
         $dokumen_file->storeAs('/public/dokumen', $nama_dokumen);
         

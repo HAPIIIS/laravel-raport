@@ -19,15 +19,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('archive_data')->insert([
-            [
-                'nama_uploader'=>'Hafizh Trisnindito',
-                'tgl_upload'=>Carbon::create('2023','01','07'),
-                'nama_file'=>'Proposal KP',
-                'jenis_file'=>'docx',
-                'dokumen_file'=>'Proposal KP.docx',
-            ],
-            
-        ]);
+        $this->call(UserSeeder::class);
     }
 }

@@ -19,4 +19,8 @@ class Inggris extends Model
             ->orWhere('kelas', 'like', '%' . $search . '%');
         });
     }
+
+    public function user(){
+        return $this->hasMany(User::class, 'nisn', 'nisn');
+    }
 }

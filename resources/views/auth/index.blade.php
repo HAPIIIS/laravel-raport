@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.auth.login')
 
-<head>
-  @include('template.head')
-  <title>{{ $sub_page }}</title>
-  <style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-</style>
-</head>
-
-<body class="">
-  <div class="container position-sticky z-index-sticky top-0">
+@section('form_login')
+@if(session('error'))
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{session('error')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
   </div>
-  <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
-              <div class="card card-plain">
-                <div class="card-header pb-0 text-start">
-                  <h4 class="font-weight-bolder">Sign In</h4>
-                  <p class="mb-0">Enter your NISN and password to sign in</p>
-                </div>
-                <div class="card-body">
-                  <form action="" method="POST" role="form">
-                    @csrf
-                    <div class="mb-3">
-                      <input type="number" class="form-control form-control-lg" placeholder="NISN" aria-label="NISN">
-                    </div>
-                    <div class="mb-3">
-                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
-                    </div>
-                    <div class="text-center">
-                      <button type="button" class="btn btn-lg btn-success btn-lg w-100 mt-4 mb-0">Sign in</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://foto.data.kemdikbud.go.id/getImage/20253174/15.jpg');
-          background-size: cover;">
-                <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Barangsiapa yang keluar untuk mencari ilmu, maka ia berada di jalan Allah hingga ia pulang."</h4>
-                <p class="text-white position-relative">- (HR. Tirmidzi).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!--   Core JS Files   -->
- @include('template.script')
-</body>
+@endif
 
-</html>
+<div class="card card-plain">
+<div class="card-header pb-0 text-start">
+<h4 class="font-weight-bolder">Sign In</h4>
+<p class="mb-0">Enter your UID and password to sign in</p>
+</div>
+<div class="card-body">
+<form action="{{ route('proses_login') }}" method="POST" role="form">
+  @csrf
+  <div class="mb-3">
+    <input type="number" class="form-control form-control-lg @error('nisn') is-invalid @enderror" placeholder="NISN/NUPTK" aria-label="nisn" name="nisn" id="nisn" required value="{{ old('nisn') }}">
+
+    @error('nisn')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
+
+  </div>
+  <div class="mb-3">
+    
+    <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" id="password">
+
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-lg btn-success btn-lg w-100 mt-4 mb-0">Sign in</button>
+  </div>
+</form>
+</div>
+</div>
+</div>
+@endsection

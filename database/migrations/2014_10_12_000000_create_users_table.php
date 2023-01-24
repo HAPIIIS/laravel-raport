@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('nisn')->unique();
+            $table->char('nisn', 15)->unique();
             $table->string('name');
-            $table->tinyInteger('role')->default(0);
-            // 0=siswa, 1=guru, 2=admin
+            $table->string('role')->default('siswa');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('inggris', function (Blueprint $table) {
             $table->id();
             $table->char('nisn', 15)->unique();
+            $table->foreign('nisn')->references('nisn')->on('users');
             $table->string('nama_siswa');
             $table->string('kelas');
             $table->integer('ph1')->nullable();
