@@ -3,7 +3,7 @@
 <div class="card-header pb-0">
   <h6>Data User</h6>
 </div>
-<div class="div-button d-flex justify-content-end mt-2 me-3">
+<div class="div-button d-flex justify-content-end mt-2 me-4">
   <a href="#" data-bs-toggle="modal" data-bs-target="#importExcel">
     <button type="button" class="btn btn-outline-success ms-2">
       <i class="bi bi-database-add"></i>
@@ -11,7 +11,7 @@
     </button>
   </a>
 </div>
-<div class="color-success mt-1 ms-1 me-1">
+<div class="color-success mt-1 ms-3 me-3">
   {{ $user->links() }}
 </div>
 <div class="card-body px-0 pt-0 pb-2">

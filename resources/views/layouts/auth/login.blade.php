@@ -38,6 +38,7 @@
   </main>
   <!--   Core JS Files   -->
  @include('template.script')
+ @yield('script_pwd')
 </body>
 
 </html>

@@ -110,14 +110,14 @@
                 <span class="nav-link-text ms-1">Nilai TIK</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($sub_page == "Nilai Hadits dan Do'a") ? 'active' : '' }}" href="{{asset('nilai/hadis')}}">
+                <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text ms-1">Nilai Hadits dan Do'a</span>
+              </a>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ ($sub_page == "Nilai Hadits dan Do'a") ? 'active' : '' }}" href="{{asset('nilai/hadis')}}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            </div>
-            <span class="nav-link-text ms-1">Nilai Hadits dan Do'a</span>
-          </a>
         </li>
         
         <li class="nav-item">

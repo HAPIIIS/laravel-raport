@@ -79,6 +79,16 @@
                     <input class="form-control" type="text" value="{{ Auth::user()->name }}">
                   </div>
                 </div>
+                @if (Auth::user()->role == 'siswa') 
+                  @foreach ($kelas as $k)    
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="example-text-input" class="form-control-label">Kelas</label>
+                      <input class="form-control" type="text" value="{{ $k->kelas }}">
+                    </div>
+                  </div>
+                  @endforeach   
+                @endif
               </div>            
             </div>
           </div>

@@ -11,9 +11,11 @@ class ProfileController extends Controller
 {
     public function show(){
         $user = Auth::user()->get();
+        $kelas = Auth::user()->matematika()->get();
         return view('profile',[
             "sub_page" => "Profile",
-            "user" => $user
+            "user" => $user,
+            "kelas" => $kelas
         ]);
     }
 }
