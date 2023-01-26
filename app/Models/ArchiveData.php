@@ -9,8 +9,6 @@ class ArchiveData extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-
     protected $table = 'archive_data';
     protected $fillable = [
         'nama_uploader',
@@ -23,7 +21,8 @@ class ArchiveData extends Model
     public function scopeFilter($query, array $filters){
         $query->when($filters['search'] ?? false, function($query, $search){
             return $query->where('nama_uploader', 'like', '%'. $search . '%')
-            ->orWhere('nama_file', 'like', '%' . $search . '%');
+            ->orWhere('nama_file', 'like', '%' . $search . '%')
+            ->orWhere('jenis_file', 'like', '%' . $search . '%');
         });
     }
 }

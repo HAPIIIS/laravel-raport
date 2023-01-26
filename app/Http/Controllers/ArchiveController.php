@@ -25,17 +25,19 @@ class ArchiveController extends Controller
         ]);
         
         $dokumen_file = $request->file('dokumen_file');
-        $nama_dokumen = rand(0,999999) . $request->file('dokumen_file')->getClientOriginalName(); 
+        $nama_dokumen = 'DATA' . uniqid() . $request->file('dokumen_file')->getClientOriginalName(); 
         // $dokumen_file->move(public_path('dokumen/'), $nama_dokumen);
         $dokumen_file->storeAs('/public/dokumen', $nama_dokumen);
         
-        $data = new ArchiveData();
-        $data->nama_uploader = $request->nama_uploader;
-        $data->tgl_upload = $request->tgl_upload;
-        $data->nama_file = $request->nama_file;
-        $data->jenis_file = $request->jenis_file;
-        $data->dokumen_file = $nama_dokumen;
-        $data->save();
+        if($validatedData){
+            $data = new ArchiveData();
+            $data->nama_uploader = $request->nama_uploader;
+            $data->tgl_upload = $request->tgl_upload;
+            $data->nama_file = $request->nama_file;
+            $data->jenis_file = $request->jenis_file;
+            $data->dokumen_file = $nama_dokumen;
+            $data->save();
+        }
 
         return redirect('/archive');
     }
@@ -51,11 +53,13 @@ class ArchiveController extends Controller
             'nama_file' => 'required',
         ]);
 
-        $data = ArchiveData::find($id);
-        $data->nama_uploader = $request->nama_uploader;
-        $data->tgl_upload = $request->tgl_upload;
-        $data->nama_file = $request->nama_file;
-        $data->save();
+        if($validatedData){
+            $data = ArchiveData::find($id);
+            $data->nama_uploader = $request->nama_uploader;
+            $data->tgl_upload = $request->tgl_upload;
+            $data->nama_file = $request->nama_file;
+            $data->save();
+        }
 
         return redirect('/archive');
 

@@ -11,10 +11,11 @@
       <tr>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No.</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Uploader</th>
-        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal Upload</th>
+        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Upload</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama File</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis File</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Document</th>
+        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
       </tr>
@@ -32,14 +33,14 @@
         <td>
           <p class="text-s font-weight-bold mb-0 text-center">{{ $a->nama_uploader }}</p>
         </td>
-        <td class="align-middle text-center text-sm">
+        <td class="align-middle text-sm">
           <p class="text-s font-weight-bold mb-0 text-center">{{ $a->tgl_upload }}</p>
         </td>
         <td class="align-middle text-center">
           <p class="text-s font-weight-bold mb-0 text-center">{{ $a->nama_file }}</p>
         </td>
         <td class="align-middle text-center">
-          <p class="text-s font-weight-bold mb-0 text-center">{{ $a->jenis_file }}</p>
+          <p class="text-s text-uppercase font-weight-bold mb-0 text-center">{{ $a->jenis_file }}</p>
         </td>
         <td class="align-middle text-center">
           <a href="{{ Storage::url('public/dokumen/'.$a->dokumen_file) }}">
@@ -54,6 +55,11 @@
         <td class="align-middle">
           <a href="{{ url('/archive/' . $a->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $a->id }}" class="text-secondary font-weight-bold text-xs">
             Hapus
+          </a>
+        </td>
+        <td class="align-middle">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#viewModal" class="text-secondary font-weight-bold text-xs">
+            <i class="fas fa-eye"></i>
           </a>
         </td>
       </tr>

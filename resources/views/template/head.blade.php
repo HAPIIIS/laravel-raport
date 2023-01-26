@@ -64,5 +64,7 @@
         top: 40px;
         color: gray;
     }
-    
+    .btn{
+      margin-bottom:0;
+    }
   </style>

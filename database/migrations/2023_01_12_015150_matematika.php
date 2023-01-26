@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('matematika', function (Blueprint $table) {
             $table->id();
             $table->char('nisn', 15)->unique();
-            $table->foreign('nisn')->references('nisn')->on('users');
+            $table->foreign('nisn')->references('nisn')->on('users')->onDelete('cascade');
             $table->string('nama_siswa');
             $table->string('kelas')->nullable();
             $table->integer('ph1')->nullable();
