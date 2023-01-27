@@ -14,6 +14,7 @@
 <div class="color-success mt-1 ms-3 me-3">
   {{ $user->links() }}
 </div>
+@if($user->count())
 <div class="card-body px-0 pt-0 pb-2">
   <div class="table-responsive p-0">
     <table class="table align-items-center mb-0">
@@ -60,4 +61,7 @@
     </table>
   </div>
 </div>
+@else
+  <p class="text-center fs-4">Data tidak ditemukan!</p>
+@endif
 @endsection
