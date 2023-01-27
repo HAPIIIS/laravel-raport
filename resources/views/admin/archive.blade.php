@@ -43,7 +43,7 @@
           <p class="text-s text-uppercase font-weight-bold mb-0 text-center">{{ $a->jenis_file }}</p>
         </td>
         <td class="align-middle text-center">
-          <a href="{{ Storage::url('public/dokumen/'.$a->dokumen_file) }}">
+          <a href="{{ asset('storage/dokumen/'.$a->dokumen_file) }}">
             <button class="btn btn-success">Download</button>
           </a>
         </td>
@@ -55,11 +55,6 @@
         <td class="align-middle">
           <a href="{{ url('/archive/' . $a->id . '/hapus') }}" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $a->id }}" class="text-secondary font-weight-bold text-xs">
             Hapus
-          </a>
-        </td>
-        <td class="align-middle">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#viewModal" class="text-secondary font-weight-bold text-xs">
-            <i class="fas fa-eye"></i>
           </a>
         </td>
       </tr>

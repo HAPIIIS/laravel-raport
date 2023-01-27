@@ -13,7 +13,7 @@ class ArchiveController extends Controller
     public function show(){
         return view('admin.archive',[
             "sub_page" => "Document Archive",
-            "archive" => ArchiveData::latest()->filter(request(['search']))->paginate(5)
+            "archive" => ArchiveData::latest('tgl_upload')->filter(request(['search']))->paginate(5)
         ]);
     }
 

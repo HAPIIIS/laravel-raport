@@ -160,26 +160,6 @@
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="myModalLabel">Preview File</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-2 d-flex justify-content-center">
-              <img style="max-width:400px;" src="{{ Storage::url('dokumen/') . $a->dokumen_file }}" alt="Uploaded file isn't image!" class="rounded">
-            </div>
-            <br>
-            <div class="modal-footer mb-0">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
   @endforeach
 
     <div class="container-fluid py-4">
