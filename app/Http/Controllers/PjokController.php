@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PjokExport;
 use App\Models\PJOK;
 use App\Imports\PjokImport;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class PjokController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/pjok');
+	}
+    
+    public function export_excel()
+	{
+		return Excel::download(new PjokExport, 'pjok.xlsx');
 	}
 }

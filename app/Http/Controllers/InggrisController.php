@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\InggrisExport;
 use App\Imports\InggrisImport;
 use App\Models\Inggris;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class InggrisController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/bhs_inggris');
+	}
+    
+    public function export_excel()
+	{
+		return Excel::download(new InggrisExport, 'inggris.xlsx');
 	}
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ArabExport;
 use App\Imports\ArabImport;
 use App\Models\Arab;
 use Maatwebsite\Excel\Facades\Excel;
@@ -99,5 +100,10 @@ class ArabController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/arab');
+	}
+
+    public function export_excel()
+	{
+		return Excel::download(new ArabExport, 'arab.xlsx');
 	}
 }

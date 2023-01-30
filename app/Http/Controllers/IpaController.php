@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\IpaExport;
 use App\Models\IPA;
 use App\Imports\IpaImport;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class IpaController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/ipa');
+	}
+
+    public function export_excel()
+	{
+		return Excel::download(new IpaExport, 'ipa.xlsx');
 	}
 }

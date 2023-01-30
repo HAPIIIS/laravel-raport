@@ -43,7 +43,7 @@
           <p class="text-s text-uppercase font-weight-bold mb-0 text-center">{{ $a->jenis_file }}</p>
         </td>
         <td class="align-middle text-center">
-          <a href="{{ asset('storage/dokumen/'.$a->dokumen_file) }}">
+          <a href="{{ asset('storage/dokumen/'.$a->dokumen_file) }}" target="_blank">
             <button class="btn btn-success">Download</button>
           </a>
         </td>

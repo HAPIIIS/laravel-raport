@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\IpsExport;
 use App\Models\IPS;
 use App\Imports\IpsImport;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class IpsController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/ips');
+	}
+    
+    public function export_excel()
+	{
+		return Excel::download(new IpsExport, 'ips.xlsx');
 	}
 }

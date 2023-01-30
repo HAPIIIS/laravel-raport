@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TahfidzExport;
 use App\Imports\TahfidzImport;
 use App\Models\Tahfidz;
 use Illuminate\Http\Request;
@@ -15,6 +16,11 @@ class TahfidzController extends Controller
             "nilai_tahfidz" => Tahfidz::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new TahfidzExport, 'tahfidz.xlsx');
+	}
 
     public function store(Request $request){
         $validatedData = $request->validate([

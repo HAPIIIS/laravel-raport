@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MatematikaExport;
 use App\Imports\MatematikaImport;
 use App\Models\Matematika;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class MatematikaController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/matematika');
+	}
+
+    public function export_excel()
+	{
+		return Excel::download(new MatematikaExport, 'matematika.xlsx');
 	}
 }

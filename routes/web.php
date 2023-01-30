@@ -68,6 +68,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/matematika/{id}/edit',[MatematikaController::class,'edit']);
         Route::post('/nilai/matematika/update/{id}',[MatematikaController::class,'update']);
         Route::get('/nilai/matematika/{id}/hapus', [MatematikaController::class,'hapus']);
+        Route::get('/nilai/matematika/export_excel', [MatematikaController::class, 'export_excel'])->name('export_mtk');
 
         Route::get('/nilai/arab', [ArabController::class, 'show']);
         Route::post('/nilai/arab/tambah', [ArabController::class, 'store'])->name('input.arab');
@@ -75,6 +76,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/arab/{id}/edit',[ArabController::class,'edit']);
         Route::post('/nilai/arab/update/{id}',[ArabController::class,'update']);
         Route::get('/nilai/arab/{id}/hapus', [ArabController::class,'hapus']);
+        Route::get('/nilai/arab/export_excel', [PknController::class, 'export_excel'])->name('export_arab');
+
 
         Route::get('/nilai/pkn', [PknController::class, 'show']);
         Route::post('/nilai/pkn/tambah', [PknController::class, 'store'])->name('input.pkn');
@@ -82,6 +85,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/pkn/{id}/edit',[PknController::class,'edit']);
         Route::post('/nilai/pkn/update/{id}',[PknController::class,'update']);
         Route::get('/nilai/pkn/{id}/hapus', [PknController::class,'hapus']);
+        Route::get('/nilai/pkn/export_excel', [PknController::class, 'export_excel'])->name('export_pkn');
 
         Route::get('/nilai/bhs_inggris', [InggrisController::class, 'show']);
         Route::post('/nilai/bhs_inggris/tambah', [InggrisController::class, 'store'])->name('input.inggris');
@@ -89,6 +93,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/bhs_inggris/{id}/edit',[InggrisController::class,'edit']);
         Route::post('/nilai/bhs_inggris/update/{id}',[InggrisController::class,'update']);
         Route::get('/nilai/bhs_inggris/{id}/hapus', [InggrisController::class,'hapus']);
+        Route::get('/nilai/bhs_inggris/export_excel', [InggrisController::class, 'export_excel'])->name('export_bhs_inggris');
 
         Route::get('/nilai/ipa', [IpaController::class, 'show']);
         Route::post('/nilai/ipa/tambah', [IpaController::class, 'store'])->name('input.ipa');
@@ -96,6 +101,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/ipa/{id}/edit',[IpaController::class,'edit']);
         Route::post('/nilai/ipa/update/{id}',[IpaController::class,'update']);
         Route::get('/nilai/ipa/{id}/hapus', [IpaController::class,'hapus']);
+        Route::get('/nilai/ipa/export_excel', [IpaController::class, 'export_excel'])->name('export_ipa');
 
         Route::get('/nilai/ips', [IpsController::class, 'show']);
         Route::post('/nilai/ips/tambah', [IpsController::class, 'store'])->name('input.ips');
@@ -103,6 +109,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/ips/{id}/edit',[IpsController::class,'edit']);
         Route::post('/nilai/ips/update/{id}',[IpsController::class,'update']);
         Route::get('/nilai/ips/{id}/hapus', [IpsController::class,'hapus']);
+        Route::get('/nilai/ips/export_excel', [IpsController::class, 'export_excel'])->name('export_ips');
 
         Route::get('/nilai/pai', [PaiController::class, 'show']);
         Route::post('/nilai/pai/tambah', [PaiController::class, 'store'])->name('input.pai');
@@ -110,6 +117,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/pai/{id}/edit',[PaiController::class,'edit']);
         Route::post('/nilai/pai/update/{id}',[PaiController::class,'update']);
         Route::get('/nilai/pai/{id}/hapus', [PaiController::class,'hapus']);
+        Route::get('/nilai/pai/export_excel', [PaiController::class, 'export_excel'])->name('export_pai');
 
         Route::get('/nilai/pjok', [PjokController::class, 'show']);
         Route::post('/nilai/pjok/tambah', [PjokController::class, 'store'])->name('input.pjok');
@@ -117,6 +125,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/pjok/{id}/edit',[PjokController::class,'edit']);
         Route::post('/nilai/pjok/update/{id}',[PjokController::class,'update']);
         Route::get('/nilai/pjok/{id}/hapus', [PjokController::class,'hapus']);
+        Route::get('/nilai/pjok/export_excel', [PjokController::class, 'export_excel'])->name('export_pjok');
 
         Route::get('/nilai/sbdp', [SbdpController::class, 'show']);
         Route::post('/nilai/sbdp/tambah', [SbdpController::class, 'store'])->name('input.sbdp');
@@ -124,6 +133,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/sbdp/{id}/edit',[SbdpController::class,'edit']);
         Route::post('/nilai/sbdp/update/{id}',[SbdpController::class,'update']);
         Route::get('/nilai/sbdp/{id}/hapus', [SbdpController::class,'hapus']);
+        Route::get('/nilai/sbdp/export_excel', [SbdpController::class, 'export_excel'])->name('export_sbdp');
 
         Route::get('/nilai/sunda', [SundaController::class, 'show']);
         Route::post('/nilai/sunda/tambah', [SundaController::class, 'store'])->name('input.sunda');
@@ -131,6 +141,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/sunda/{id}/edit',[SundaController::class,'edit']);
         Route::post('/nilai/sunda/update/{id}',[SundaController::class,'update']);
         Route::get('/nilai/sunda/{id}/hapus', [SundaController::class,'hapus']);
+        Route::get('/nilai/sunda/export_excel', [SundaController::class, 'export_excel'])->name('export_sunda');
 
         Route::get('/nilai/tik', [TikController::class, 'show']);
         Route::post('/nilai/tik/tambah', [TikController::class, 'store'])->name('input.tik');
@@ -138,6 +149,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/tik/{id}/edit',[TikController::class,'edit']);
         Route::post('/nilai/tik/update/{id}',[TikController::class,'update']);
         Route::get('/nilai/tik/{id}/hapus', [TikController::class,'hapus']);
+        Route::get('/nilai/tik/export_excel', [TikController::class, 'export_excel'])->name('export_tik');
 
         Route::get('/nilai/tahfidz', [TahfidzController::class, 'show']);
         Route::post('/nilai/tahfidz/tambah', [TahfidzController::class, 'store'])->name('input.tahfidz');
@@ -145,6 +157,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/tahfidz/{id}/edit',[TahfidzController::class,'edit']);
         Route::post('/nilai/tahfidz/update/{id}',[TahfidzController::class,'update']);
         Route::get('/nilai/tahfidz/{id}/hapus', [TahfidzController::class,'hapus']);
+        Route::get('/nilai/tahfidz/export_excel', [TahfidzController::class, 'export_excel'])->name('export_tahfidz');
 
         Route::get('/nilai/hadis', [HadisController::class, 'show']);
         Route::post('/nilai/hadis/tambah', [HadisController::class, 'store'])->name('input.hadis');
@@ -152,6 +165,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/hadis/{id}/edit',[HadisController::class,'edit']);
         Route::post('/nilai/hadis/update/{id}',[HadisController::class,'update']);
         Route::get('/nilai/hadis/{id}/hapus', [HadisController::class,'hapus']);
+        Route::get('/nilai/hadis/export_excel', [HadisController::class, 'export_excel'])->name('export_hadis');
 
 
         // Module Archive
@@ -165,6 +179,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::group(['middleware' => ['auth', 'cek_login:siswa']], function () {
         Route::get('/siswa/dashboard', [SiswaController::class, 'show'])->name('siswa.dashboard');
         Route::get('/nilai/siswa', [SiswaController::class, 'getData']);
+        Route::get('/nilai/siswa/pdf', [SiswaController::class, 'export_pdf'])->name('export_pdf');
     });
 
 

@@ -15,6 +15,12 @@
       Import Excel
     </button>
   </a>
+  <a href="{{ route('export_ipa') }}" target="_blank">
+    <button type="button" class="btn btn-outline-danger ms-2">
+      <i class="fas fa-file-download"></i>
+      Export Excel
+    </button>
+  </a>
 </div>
 <div class="color-success mt-1 ms-1 me-1">
   {{ $nilai_ipa->links() }}
@@ -141,6 +147,6 @@
   </div>
   </table>
 @else
-  <p class="text-center fs-4">Data tidak ditemukan!</p>
+  <p class="text-center fs-4 mt-2">Data tidak ditemukan!</p>
 @endif
 @endsection

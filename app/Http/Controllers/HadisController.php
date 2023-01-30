@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\HadisExport;
 use App\Imports\HadisImport;
 use App\Models\Hadis;
 use Illuminate\Http\Request;
@@ -15,6 +16,11 @@ class HadisController extends Controller
             "nilai_hadis" => Hadis::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new HadisExport, 'hadis.xlsx');
+	}
 
     public function store(Request $request){
         $validatedData = $request->validate([

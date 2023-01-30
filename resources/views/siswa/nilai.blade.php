@@ -1,7 +1,16 @@
 @extends('layouts.siswa.nilaisiswa')
 @section('nilai_siswa')
-    <h5 class="pb-3">Halo, Selamat datang {{ Auth::user()->name }}!</h5>
+    <h5 class="pb-3">Halo, Selamat datang {{ Auth::user()->name }}&#10024;</h5>
     <hr class="horizontal dark mt-0">
+    <div class="div-button d-flex justify-content-end mt-2 me-3">
+        <a href="{{ route('export_pdf') }}" target="_blank" class="ms-">
+            <button type="button" class="btn btn-danger ms-2">
+              <i class="fas fa-file-download"></i>
+              Export PDF
+            </button>
+        </a>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="col-md-12 mb-3">

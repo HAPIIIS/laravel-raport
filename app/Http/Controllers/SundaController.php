@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SundaExport;
 use App\Imports\SundaImport;
 use App\Models\Sunda;
 use Illuminate\Http\Request;
@@ -15,6 +16,12 @@ class SundaController extends Controller
             "nilai_sunda" => Sunda::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new SundaExport, 'sunda.xlsx');
+	}
+
     public function store(Request $request){
         $validatedData = $request->validate([
             'nisn' => 'required',

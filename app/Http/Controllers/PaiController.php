@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PaiExport;
 use App\Models\PAI;
 use App\Imports\PaiImport;
 use Illuminate\Http\Request;
@@ -99,5 +100,11 @@ class PaiController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/pai');
+	}
+
+    
+    public function export_excel()
+	{
+		return Excel::download(new PaiExport, 'pai.xlsx');
 	}
 }

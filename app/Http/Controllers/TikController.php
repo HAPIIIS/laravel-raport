@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TikExport;
 use App\Imports\TikImport;
 use App\Models\TIK;
 use Illuminate\Http\Request;
@@ -15,6 +16,12 @@ class TikController extends Controller
             "nilai_tik" => TIK::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
         ]);
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new TikExport, 'tik.xlsx');
+	}
+
     public function store(Request $request){
         $validatedData = $request->validate([
             'nisn' => 'required',

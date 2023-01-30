@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PknExport;
 use App\Imports\PknImport;
 use App\Models\PKN;
 use Illuminate\Http\Request;
@@ -99,5 +100,10 @@ class PknController extends Controller
 
 		// alihkan halaman kembali
 		return redirect('/nilai/pkn');
+	}
+
+    public function export_excel()
+	{
+		return Excel::download(new PknExport, 'pkn.xlsx');
 	}
 }

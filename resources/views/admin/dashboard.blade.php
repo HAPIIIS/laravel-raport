@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('dashboard_admin')
-    <h6 class="pb-3">Halo, Selamat datang {{ Auth::user()->name }}!</h6>
+    <h6 class="pb-3">Halo, Selamat datang {{ Auth::user()->name }}&#10024;</h6>
     <div class="row mb-3">
         <div class="col-sm-4">
             <div class="card">

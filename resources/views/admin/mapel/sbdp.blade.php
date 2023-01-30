@@ -15,6 +15,12 @@
       Import Excel
     </button>
   </a>
+  <a href="{{ route('export_sbdp') }}" target="_blank">
+    <button type="button" class="btn btn-outline-danger ms-2">
+      <i class="fas fa-file-download"></i>
+      Export Excel
+    </button>
+  </a>
 </div>
 <div class="color-success mt-1 ms-1 me-1">
   {{ $nilai_sbdp->links() }}
