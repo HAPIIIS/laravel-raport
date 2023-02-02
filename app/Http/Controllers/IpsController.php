@@ -13,7 +13,7 @@ class IpsController extends Controller
     public function show(){
         return view('admin.mapel.ips',[
             "sub_page" => "Nilai Ilmu Pengetahuan Sosial",
-            "nilai_ips" => IPS::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_ips" => IPS::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){

@@ -13,7 +13,7 @@ class ArabController extends Controller
     public function show(){
         return view('admin.mapel.arab',[
             "sub_page" => "Nilai Bahasa Arab",
-            "nilai_arab" => Arab::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_arab" => Arab::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){

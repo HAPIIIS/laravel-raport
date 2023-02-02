@@ -15,24 +15,43 @@
         body { 
             margin: 2cm; 
             margin-top: 0;
-
+            font-family: 
+        }
+        table thead tr th{
+            padding: 10px;
         }
 	</style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 2cm auto;">
-<header style="color:green; margin-bottom: 2rem;">
-    <p style="text-align:center; margin: 0;">YAYASAN AL-HIKMAH BINTARA</p>
-    <p style="text-align:center; margin: 0;">SEKOLAH DASAR ISLAM TERPADU (SDIT)</p>
-    <p style="text-align:center; margin: 0; font-size: 2em;">Al Hikmah Bintara</p>
-    <p style="text-align:center; margin: 0;">TERAKREDITASI "A"</p>
-    <p style="text-align:center; margin: 0;">Jl. Raya Bintara No 12 Bekasi Barat, Tel 8861040, 8852015 Fax. 8861040</p>
-    <hr style="border: 2px solid green; margin: .5cm;">
-</header>   
+<body style="font-family: Arial, sans-serif; margin-left:0; margin-right:0;">
+<header style="color:green; margin-bottom: 2rem; margin-top:1cm;">
+    <div class="header">
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="width: 25%;">
+                    <img style="max-width: 100px; margin-right: 5px;" src="{{ asset('storage/img/yayasan.png') }}" alt="">
+                </td>
+                <td style="width: 50%;">
+                    <p style="text-align:center; margin: 0;">YAYASAN AL-HIKMAH BINTARA</p>
+                    <p style="text-align:center; margin: 0;">SEKOLAH DASAR ISLAM TERPADU (SDIT)</p>
+                    <p style="text-align:center; margin: 0; font-size: 2em;">Al Hikmah Bintara</p>
+                    <p style="text-align:center; margin: 0;">TERAKREDITASI "A"</p>
+                    <p style="text-align:center; margin: 0;">Jl. Raya Bintara No 12 Bekasi Barat, Tel 8861040, 8852015 Fax. 8861040</p>
+                </td>
+                <td style="width: 25%;">
+                    <img style="max-width: 100px; padding-left: 30px;" src="{{ asset('storage/img/logo.png') }}" alt="">
+                </td>
+            </tr>
+        </table>
+        <div class="hr">
+            <hr style="border: 2px solid green;">
+        </div>   
+    </div>
+</header>
 
 <div class="row">
     <div class="col-12">
-        <div class="col-md-12" style="text-align: right; margin-top: 0; margin-right: 2cm;">
-            <p>Bekasi, {{ $time }}</p>
+        <div class="col-md-12" style="text-align: right; margin-right: 2cm;">
+            <p style="margin-right: 1cm;  margin-top: 0;">Bekasi, {{ $time }}</p>
         </div>
         <div class="col-md-12">
             <p style="margin-bottom: 0;" class="text-uppercase text-sm">Nama Siswa   : {{ Auth::user()->name }}</p>
@@ -73,7 +92,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12">
@@ -113,7 +132,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -153,7 +172,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -193,7 +212,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -233,7 +252,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -273,7 +292,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -313,7 +332,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -353,7 +372,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -393,7 +412,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -433,7 +452,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -473,7 +492,7 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
@@ -500,18 +519,18 @@
                 <tbody>
                     @foreach ($hadis as $hadis)
                         <tr>
-                            <td>{{ $hadis->d1 }}</td>
-                            <td>{{ $hadis->d2 }}</td>
-                            <td>{{ $hadis->d3 }}</td>
-                            <td>{{ $hadis->d4 }}</td>
-                            <td>{{ $hadis->d5 }}</td>
-                            <td>{{ $hadis->d6 }}</td>
-                            <td>{{ $hadis->h1 }}</td>
-                            <td>{{ $hadis->h2 }}</td>
-                            <td>{{ $hadis->h3 }}</td>
-                            <td>{{ $hadis->h4 }}</td>
-                            <td>{{ $hadis->h5 }}</td>
-                            <td>{{ $hadis->h6 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d1 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d2 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d3 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d4 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d5 }}</td>
+                            <td style="padding: 3px">{{ $hadis->d6 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h1 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h2 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h3 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h4 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h5 }}</td>
+                            <td style="padding: 3px">{{ $hadis->h6 }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -519,11 +538,11 @@
         </div>
     </div>
 </div>
-<hr class="horizontal dark mt-0">
+<hr class="horizontal dark mt-2">
 <div class="row">
     <div class="col-12">
         <div class="col-md-12 mb-3">
-            <h6 class="text-uppercase text-sm">Nilai Tahfidz dan Tahsin</h6>
+            <p class="text-uppercase text-sm">Nilai Tahfidz dan Tahsin</p>
         </div>
         <div class="row">
             <table class="table table-bordered" style="table-layout:fixed;">
@@ -546,18 +565,18 @@
                 <tbody>
                     @foreach ($tahfidz as $tahfidz)
                         <tr>
-                            <td>{{ $tahfidz->sin_jan }}</td>
-                            <td>{{ $tahfidz->sin_feb }}</td>
-                            <td>{{ $tahfidz->sin_mar }}</td>
-                            <td>{{ $tahfidz->sin_apr }}</td>
-                            <td>{{ $tahfidz->sin_mei }}</td>
-                            <td>{{ $tahfidz->sin_jun }}</td>
-                            <td>{{ $tahfidz->fiz_jan }}</td>
-                            <td>{{ $tahfidz->fiz_feb }}</td>
-                            <td>{{ $tahfidz->fiz_mar }}</td>
-                            <td>{{ $tahfidz->fiz_apr }}</td>
-                            <td>{{ $tahfidz->fiz_mei }}</td>
-                            <td>{{ $tahfidz->fiz_jun }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_jan }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_feb }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_mar }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_apr }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_mei }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->sin_jun }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_jan }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_feb }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_mar }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_apr }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_mei }}</td>
+                            <td style="padding: 3px">{{ $tahfidz->fiz_jun }}</td>
                         </tr>
                     @endforeach
                 </tbody>

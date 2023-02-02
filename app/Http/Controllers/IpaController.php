@@ -13,7 +13,7 @@ class IpaController extends Controller
     public function show(){
         return view('admin.mapel.ipa',[
             "sub_page" => "Nilai Ilmu Pengetahuan Alam",
-            "nilai_ipa" => IPA::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_ipa" => IPA::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){

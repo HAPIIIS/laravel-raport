@@ -13,7 +13,7 @@ class TikController extends Controller
     public function show(){
         return view('admin.mapel.tik',[
             "sub_page" => "Nilai Teknologi Informasi dan Komunikasi",
-            "nilai_tik" => TIK::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_tik" => TIK::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
 

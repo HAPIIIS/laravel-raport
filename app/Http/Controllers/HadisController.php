@@ -13,7 +13,7 @@ class HadisController extends Controller
     public function show(){
         return view('admin.mapel.hadis',[
             "sub_page" => "Nilai Hadis dan Do'a",
-            "nilai_hadis" => Hadis::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_hadis" => Hadis::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
 

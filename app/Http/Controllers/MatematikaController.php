@@ -13,7 +13,7 @@ class MatematikaController extends Controller
     public function show(){
         return view('admin.mapel.mtk',[
             "sub_page" => "Nilai Matematika",
-            "nilai_mtk" => Matematika::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_mtk" => Matematika::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){

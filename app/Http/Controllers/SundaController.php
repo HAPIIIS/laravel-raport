@@ -13,7 +13,7 @@ class SundaController extends Controller
     public function show(){
         return view('admin.mapel.sunda',[
             "sub_page" => "Nilai Bahasa Sunda",
-            "nilai_sunda" => Sunda::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_sunda" => Sunda::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
 

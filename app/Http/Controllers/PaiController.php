@@ -13,7 +13,7 @@ class PaiController extends Controller
     public function show(){
         return view('admin.mapel.pai',[
             "sub_page" => "Nilai Pendidikan Agama Islam",
-            "nilai_pai" => PAI::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_pai" => PAI::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){

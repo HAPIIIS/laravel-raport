@@ -13,7 +13,7 @@ class TahfidzController extends Controller
     public function show(){
         return view('admin.mapel.tahfidz',[
             "sub_page" => "Nilai Tahfidz dan Tahsin",
-            "nilai_tahfidz" => Tahfidz::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_tahfidz" => Tahfidz::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
 

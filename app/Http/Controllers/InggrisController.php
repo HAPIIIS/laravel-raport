@@ -13,7 +13,7 @@ class InggrisController extends Controller
     public function show(){
         return view('admin.mapel.inggris',[
             "sub_page" => "Nilai Bahasa Inggris",
-            "nilai_inggris" => Inggris::latest()->filter(request(['search']))->orderBy('nama_siswa')->paginate(10)
+            "nilai_inggris" => Inggris::latest()->filter(request(['search']))->orderBy('kelas', 'asc')->orderBy('nama_siswa', 'desc')->paginate(10)
         ]);
     }
     public function store(Request $request){
