@@ -18,6 +18,33 @@ class HomeController extends Controller
         ]);
 
     }
+    public function edit(Request $request, $nisn){
+        $data = User::find($nisn);
+        return view('admin.index', compact('data'));
+    }
+
+    public function update(Request $request, $nisn){
+        $validatedData = $request->validate([
+            'status' => 'required'
+        ]);
+
+        if($validatedData){
+            $data = User::findOrFail($nisn);
+            // dd($request->status);
+            $data->status = $request->status;
+            $data->save();
+        }
+
+        // dd($item->status);
+        // $data = User::find($id);
+        // $data->status = $request->status;
+        // dd($request->status);
+        // $data->save();
+        
+        // return $data->status;
+        return redirect('/admin/home');
+
+    }
 
     public function hapus(Request $request, $id)
     {

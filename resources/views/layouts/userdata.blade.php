@@ -90,7 +90,7 @@
     </div>
   </div>
     {{-- End Modal Tambah --}}
-
+@yield('form-edit')
     {{-- DeleteModal  --}}
     @foreach ($user as $u)
         <div class="modal fade" id="deleteNilaiModal{{ $u->id }}" tabindex="-1" aria-labelledby="deleteNilaiLabel" aria-hidden="true">

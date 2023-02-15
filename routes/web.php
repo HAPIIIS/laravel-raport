@@ -61,6 +61,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/admin/home', [HomeController::class, 'index']);
         Route::get('/admin/user/{id}/hapus', [HomeController::class,'hapus']);
         Route::post('/admin/add_user/import_excel', [HomeController::class, 'import']);
+        Route::get('/admin/user/{nisn}/edit',[HomeController::class,'edit']);
+        Route::post('/admin/user/update/{nisn}',[HomeController::class,'update'])->name('update_status');
         
         Route::get('/nilai/matematika', [MatematikaController::class, 'show'])->name('index.mtk');
         Route::post('/nilai/matematika/tambah', [MatematikaController::class, 'store'])->name('input.mtk');
@@ -76,7 +78,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/nilai/arab/{id}/edit',[ArabController::class,'edit']);
         Route::post('/nilai/arab/update/{id}',[ArabController::class,'update']);
         Route::get('/nilai/arab/{id}/hapus', [ArabController::class,'hapus']);
-        Route::get('/nilai/arab/export_excel', [PknController::class, 'export_excel'])->name('export_arab');
+        Route::get('/nilai/arab/export_excel', [ArabController::class, 'export_excel'])->name('export_arab');
 
 
         Route::get('/nilai/pkn', [PknController::class, 'show']);
