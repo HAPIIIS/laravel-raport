@@ -53,7 +53,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('logout',[LoginController::class, 'logout'])->name('logout');
         Route::get('/redirect', [RedirectController::class, 'cek']);
         Route::get('/profile', [ProfileController::class, 'show']);
-
+        Route::get('/change-password', [ProfileController::class, 'changePassword'])->name('change-password');
+        Route::post('/change-password', [ProfileController::class, 'updatePassword'])->name('update-password');
     });
 
     Route::group(['middleware' => ['auth', 'cek_login:admin']], function () {

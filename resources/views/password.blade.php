@@ -52,51 +52,39 @@
             @endif
             <div class="card-header pb-0">
               <div class="d-flex align-items-en">
-              <p class="text-uppercase text-sm">User Information</p>
-                <a href="{{ route('change-password') }}" class="ms-auto me-2">
-                  <button class="btn btn-success btn-sm">
-                    <i class="fas fa-cog me-sm-1"></i>
-                    <span class="d-sm-inline d-none">Settings</span>
-                  </button>
-                </a>
-                <a href="{{ route('logout') }}">
-                  <button class="btn btn-danger btn-sm">
-                    <i class="fas fa-sign-out-alt me-sm-1"></i>
-                    <span class="d-sm-inline d-none">Log Out</span>
-                  </button>
-                </a>
+                <p class="text-uppercase text-sm">Change Password</p>
               </div>
             </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    @if(Auth::user()->role == 'admin')
-                      <label for="example-text-input" class="form-control-label">NUPTK</label>
-                    @else
-                      <label for="example-text-input" class="form-control-label">NISN</label>
-                    @endif
-                    <input class="form-control" type="number" value="{{ Auth::user()->nisn }}">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Full name</label>
-                    <input class="form-control" type="text" value="{{ Auth::user()->name }}">
-                  </div>
-                </div>
-                @if (Auth::user()->role == 'siswa') 
-                  @foreach ($kelas as $k)    
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Kelas</label>
-                      <input class="form-control" type="text" value="{{ $k->kelas }}">
+            <form action="{{ route('update-password') }}" method="POST">
+                @csrf
+                <div class="card-body">
+                    <div class="col-md-12 mb-2">
+                        <label for="oldPasswordInput" class="form-label">Password Lama</label>
+                        <input name="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" id="oldPasswordInput"
+                            placeholder="Old Password">
+                        @error('old_password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
-                  </div>
-                  @endforeach   
-                @endif
-              </div>            
-            </div>
+                    <div class="col-md-12 mb-2">
+                        <label for="newPasswordInput" class="form-label">Password Baru</label>
+                        <input name="new_password" type="password" class="form-control" id="newPasswordInput"
+                            placeholder="New Password">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="confirmNewPasswordInput" class="form-label">Re-type Password Baru</label>
+                        <input name="new_password_confirmation" type="password" class="form-control @error('new_password') is-invalid @enderror" id="confirmNewPasswordInput"
+                            placeholder="Confirm New Password">
+                        @error('new_password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
           </div>
         </div>
       </div>
