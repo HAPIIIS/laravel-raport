@@ -64,6 +64,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::post('/admin/add_user/import_excel', [HomeController::class, 'import']);
         Route::get('/admin/user/{nisn}/edit',[HomeController::class,'edit']);
         Route::post('/admin/user/update/{nisn}',[HomeController::class,'update'])->name('update_status');
+        Route::get('/user/json/{nisn}', [HomeController::class, 'userJson'])->name('user_json');
         
         Route::get('/nilai/matematika', [MatematikaController::class, 'show'])->name('index.mtk');
         Route::post('/nilai/matematika/tambah', [MatematikaController::class, 'store'])->name('input.mtk');
@@ -174,8 +175,6 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // Module Archive
         Route::get('/archive', [ArchiveController::class, 'show'])->name('index.data'); //nampilin data
         Route::post('/archive', [ArchiveController::class, 'index'])->name('input.data'); //input data archive
-        Route::get('/archive/{id}/edit',[ArchiveController::class,'edit']);
-        Route::post('/archive/update/{id}',[ArchiveController::class,'update']);
         Route::get('/archive/{id}/hapus', [ArchiveController::class,'hapus']);
     });
 

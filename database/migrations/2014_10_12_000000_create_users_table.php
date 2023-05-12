@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->char('nisn', 15)->unique();
+            $table->char('nisn', 15)->unique()->onDelete('cascade');
             $table->string('name');
             $table->string('role')->default('siswa');
             $table->string('password');

@@ -16,8 +16,6 @@
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis File</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Document</th>
         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
       </tr>
     </thead>
     <tbody>
@@ -45,11 +43,6 @@
         <td class="align-middle text-center">
           <a href="{{ asset('storage/dokumen/'.$a->dokumen_file) }}" target="_blank">
             <button class="btn btn-success">Download</button>
-          </a>
-        </td>
-        <td class="align-middle">
-          <a href="{{ url('/archive/' . $a->id . '/edit') }}" data-bs-toggle="modal" data-bs-target="#editModal{{ $a->id }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-            Edit
           </a>
         </td>
         <td class="align-middle">

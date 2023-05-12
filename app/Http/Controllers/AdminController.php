@@ -11,8 +11,8 @@ class AdminController extends Controller
         return view('admin.dashboard',[
             "sub_page" => "Dashboard Guru",
             "user" => User::get(),
-            "guru" => User::where('role', 'admin')->get(),
-            "siswa" => User::where('role', 'siswa')->get()
+            "active" => User::where('status', 'active')->get(),
+            "inactive" => User::where('status', 'inactive')->get()
         ]);
     }
 }

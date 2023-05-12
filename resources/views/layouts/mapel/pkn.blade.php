@@ -454,6 +454,16 @@
   </main>
   </div>
   @include('template.script')
+  <script>
+    $('#nisn').debounce("keyup", () => {
+      console.log('g');
+      const nisn = $('#nisn').val();
+        fetch(`/user/json/${nisn}`)
+    .then((response) => response.json())
+    .then((data) => $('#nama_siswa').val(data.name))
+    .catch(() => $('#nama_siswa').val(""))
+    }, 500);
+  </script>
 </body>
 
 </html>

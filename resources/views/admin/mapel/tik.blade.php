@@ -145,7 +145,7 @@
     @endforeach
     </tbody>
   </div>
-  @include('template.modal.tik.editdata')
+  {{-- @include('template.modal.tik.editdata') --}}
   </table>
 @else
   <p class="text-center fs-4 mt-2">Data tidak ditemukan!</p>

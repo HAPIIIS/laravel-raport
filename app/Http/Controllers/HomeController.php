@@ -14,36 +14,31 @@ class HomeController extends Controller
     {
         return view('admin.index',[
             "sub_page" => "Data User",
-            "user" => User::latest()->filter(request(['search']))->orderBy('role')->paginate(10)
+            "user" => User::latest()->filter(request(['search']))->orderBy('role')->paginate('10')
         ]);
 
     }
     public function edit(Request $request, $nisn){
-        $data = User::find($nisn);
-        return view('admin.index', compact('data'));
+        $user = User::find($nisn);
+        return view('admin.index', compact('user'));
     }
 
     public function update(Request $request, $nisn){
         $validatedData = $request->validate([
+            'name' => 'required',
+            'nisn' => 'required',
             'status' => 'required'
         ]);
 
         if($validatedData){
             $data = User::findOrFail($nisn);
-            // dd($request->status);
+            $data->name = $request->name;
+            $data->nisn = $request->nisn;
             $data->status = $request->status;
             $data->save();
         }
 
-        // dd($item->status);
-        // $data = User::find($id);
-        // $data->status = $request->status;
-        // dd($request->status);
-        // $data->save();
-        
-        // return $data->status;
         return redirect('/admin/home');
-
     }
 
     public function hapus(Request $request, $id)
@@ -77,4 +72,12 @@ class HomeController extends Controller
 		// alihkan halaman kembali
 		return redirect('/admin/home');
 	}
+
+    public function userJson($nisn) {
+        $user = User::select(['name'])->find($nisn);
+        if (!$user) {
+            return response()->json(['error' => 'Not Found']);
+        }
+        return response()->json($user);
+    }
 }
